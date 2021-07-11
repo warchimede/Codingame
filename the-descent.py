@@ -12,4 +12,4 @@ while True:
             height = mountain_h
             index = i
     
-    print(index)
+    print(index) # the index of the mountain to fire on.
