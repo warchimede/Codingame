@@ -20,5 +20,5 @@ while true {
     }
   }
 
-  print(index);     // The index of the mountain to fire on.
+  print(index)
 }
