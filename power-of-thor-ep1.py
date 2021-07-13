@@ -14,23 +14,23 @@ light_x, light_y, tx, ty = [int(i) for i in input().split()]
 
 # game loop
 while True:
-    remaining_turns = int(input())  # The remaining amount of turns Thor can move. Do not remove this line.
+  remaining_turns = int(input())  # The remaining amount of turns Thor can move. Do not remove this line.
 
-    ns = ""
-    if ty < light_y:
-        ns = "S"
-        ty += 1
-    elif ty > light_y:
-        ns = "N"
-        ty -= 1
+  ns = ""
+  if ty < light_y:
+    ns = "S"
+    ty += 1
+  elif ty > light_y:
+    ns = "N"
+    ty -= 1
     
-    ew = ""
-    if tx < light_x:
-        ew = "E"
-        tx += 1
-    elif tx > light_x:
-        ew = "W"
-        tx -= 1
+  ew = ""
+  if tx < light_x:
+    ew = "E"
+    tx += 1
+  elif tx > light_x:
+    ew = "W"
+    tx -= 1
 
-    # A single line providing the move to be made: N NE E SE S SW W or NW
-    print(f"{ns}{ew}")
+  # A single line providing the move to be made: N NE E SE S SW W or NW
+  print(f"{ns}{ew}")
