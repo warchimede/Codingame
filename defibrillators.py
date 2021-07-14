@@ -18,13 +18,12 @@ n = int(input())
 min_d = None
 address = None
 for i in range(n):
-    defib = input()
-    defib_elts = defib.split(';')
-    lat_d = to_rad(to_f(defib_elts.pop()))
-    lon_d = to_rad(to_f(defib_elts.pop()))
+    defib = input().split(';')
+    lat_d = to_rad(to_f(defib.pop()))
+    lon_d = to_rad(to_f(defib.pop()))
     dist = distance(lat, lon, lat_d, lon_d)
     if (min_d is None) or (dist < min_d):
         min_d = dist
-        address = defib_elts[1]
+        address = defib[1]
 
 print(address)
