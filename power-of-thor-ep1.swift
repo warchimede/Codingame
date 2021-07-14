@@ -2,7 +2,7 @@ import Glibc
 import Foundation
 
 public struct StderrOutputStream: TextOutputStream {
-    public mutating func write(_ string: String) { fputs(string, stderr) }
+  public mutating func write(_ string: String) { fputs(string, stderr) }
 }
 public var errStream = StderrOutputStream()
 
