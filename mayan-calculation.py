@@ -55,12 +55,14 @@ operation = input()
 result = compute(num1, num2, operation)
 
 # Translate to mayan representation
+## Decompose in base 20
 
 
 # Print result
 print(mayans, file=sys.stderr, flush=True)
 print(" ", file=sys.stderr, flush=True)
 print(num1, file=sys.stderr, flush=True)
-print(" ", file=sys.stderr, flush=True)
+print(operation, file=sys.stderr, flush=True)
 print(num2, file=sys.stderr, flush=True)
+print("=", file=sys.stderr, flush=True)
 print(result, file=sys.stderr, flush=True)
