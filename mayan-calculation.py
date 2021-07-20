@@ -37,6 +37,25 @@ def compute(num1: int, num2: int, op: str) -> int:
     if op=="/": return int(num1/num2)
     if op=="+": return num1+num2
     if op=="-": return num1-num2
+
+def decompose_in_base(num: int, base: int) -> [int]:
+    if num == 0: return [0]
+    result = []
+    n = num
+    while n!=0:
+        result.append(n%base)
+        n = n//base
+    result.reverse()
+    return result
+
+def int_in_base_to_mayan(num_in_base: [int], all_mayans: [[str]]) -> [[str]]:
+    return list(map(lambda i: all_mayans[i],num_in_base))
+
+
+def print_answer(result: [[str]]):
+    for i in range(len(result)):
+        for j in range(len(result[i])):
+            print(result[i][j])
     
 # Get the array of mayan representations
 mayans = to_mayans(lines=get_mayan_lines(h,l), height=h)
@@ -55,14 +74,8 @@ operation = input()
 result = compute(num1, num2, operation)
 
 # Translate to mayan representation
-## Decompose in base 20
-
+result_in_base = decompose_in_base(result, base)
+answer = int_in_base_to_mayan(result_in_base, mayans)
 
 # Print result
-print(mayans, file=sys.stderr, flush=True)
-print(" ", file=sys.stderr, flush=True)
-print(num1, file=sys.stderr, flush=True)
-print(operation, file=sys.stderr, flush=True)
-print(num2, file=sys.stderr, flush=True)
-print("=", file=sys.stderr, flush=True)
-print(result, file=sys.stderr, flush=True)
+print_answer(answer)
